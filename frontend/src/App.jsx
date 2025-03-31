@@ -1,17 +1,23 @@
-import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import HomePage from './pages/HomePage'
+import SignUpPage from './pages/SignUpPage'
+import LoginPage from './pages/LoginPage'
+import SettingsPage from './pages/SettingsPage'
+import ProfilePage from './pages/ProfilePage'
 
 const App = () => {
   return (
-    <>
-    <button className="btn btn-soft">Default</button>
-<button className="btn btn-soft btn-primary">Primary</button>
-<button className="btn btn-soft btn-secondary">Secondary</button>
-<button className="btn btn-soft btn-accent">Accent</button>
-<button className="btn btn-soft btn-info">Info</button>
-<button className="btn btn-soft btn-success">Success</button>
-<button className="btn btn-soft btn-warning">Warning</button>
-<button className="btn btn-soft btn-error">Error</button>
-    </>
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<HomePage/>} />
+        <Route path='/signup' element={<SignUpPage/>} />
+        <Route path='/login' element={<LoginPage/>} />
+        <Route path='/settings' element={<SettingsPage/>} />
+        <Route path='/profile' element={<ProfilePage/>} />
+      </Routes>
+    </div>
   )
 }
 
